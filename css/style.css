@@ -16,7 +16,7 @@
     background-color: black;
 }
 
-.carousel-container{
+#carousel-container{
     position: relative;
     width: 700px;
     height: 300px;
