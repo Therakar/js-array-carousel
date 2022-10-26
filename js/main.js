@@ -7,8 +7,19 @@ const images = [`img/01.jpg`, `img/02.jpg`, `img/03.jpg`, `img/04.jpg`, `img/05.
 
 // ciclo for che va a ciclare l'array images
 for (let i = 0; i < images.length; i++){
+
+    // creo i div che contengono le imagini
     const element = document.createElement(`div`);
+
+    // inserisco le immagini dentro i div
     element.innerHTML =`<img src="${images[i]}" alt="img">`; 
-    element.classList.add("item")
+
+    // do la classe "item" a tutti i div
+    element.classList.add("item");
+
+    // metto i div nell'html
     document.getElementById("carousel-container").append(element);
 }
+
+// assegno al primo div la classe "active"
+document.querySelector(".item").classList.add("active");
