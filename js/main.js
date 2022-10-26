@@ -23,3 +23,28 @@ for (let i = 0; i < images.length; i++){
 
 // assegno al primo div la classe "active"
 document.querySelector(".item").classList.add("active");
+
+// variabile sentinella
+let active = 0;
+
+// event listener
+const up = document.getElementById("up");
+const down = document.getElementById("down");
+
+up.addEventListener("click", scrollUp);
+down.addEventListener("click", scrollDown);
+
+function scrollUp() {
+    alert("scroll Up");
+    active = active - 1;
+}
+
+function scrollDown() {
+    alert("scroll Down");
+    active = active + 1;
+}
+
+
+
+
+
