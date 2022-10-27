@@ -24,25 +24,57 @@ for (let i = 0; i < images.length; i++){
 // assegno al primo div la classe "active"
 document.querySelector(".item").classList.add("active");
 
-// variabile sentinella
-let active = 0;
+
+
 
 // event listener
 const up = document.getElementById("up");
 const down = document.getElementById("down");
 
-up.addEventListener("click", scrollUp);
-down.addEventListener("click", scrollDown);
+// variabile sentinella
+let active = 0;
 
-function scrollUp() {
-    alert("scroll Up");
-    active = active - 1;
-}
+// seleziono tutti gli items
+const items = document.querySelectorAll(".item")
 
-function scrollDown() {
-    alert("scroll Down");
-    active = active + 1;
-}
+up.addEventListener("click", function(){
+    items[active].classList.remove("active");
+    if (active === 0 ){
+        active = images.length - 1;
+    } else {
+        active--;
+    }
+    items[active].classList.add("active");
+});
+
+down.addEventListener("click", function() {
+    items[active].classList.remove("active");
+    if (active === images.length - 1){
+        active = 0;
+    } else {
+        active++;
+    }
+    items[active].classList.add("active");
+
+    // const itemActive = document.querySelector(".item.active");
+    // const nextItem = itemActive.nextElementSibling;
+    // itemActive.classList.remove("active");
+    // if (nextItem != null){
+    //    nextItem.classList.add("active"); 
+    // } else{
+    //     document.querySelector(".item").classList.add("active");
+    // }
+});
+
+
+
+
+
+
+
+
+
+
 
 
 
